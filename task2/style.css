@@ -1,0 +1,26 @@
+html {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(37, 37, 37);
+}
+
+#controls {
+	margin-top: 40px;
+}
+
+#boxes {
+	display: flex;
+	flex-direction: column;
+	padding-top: 20px;
+}
+
+#boxes > div {
+	margin: auto;
+}
