@@ -6,7 +6,7 @@ let searchText = ""
 const apiKey = "28643468-0bfd18c65d82c5dc5dca3f2bd"
 
 input.addEventListener("keyup", (e) => {
-	console.log(e.target.value)
+	// console.log(e.target.value)
 	searchText = e.target.value
 	setTimeout(resetSearch, 1000)
 })
@@ -30,22 +30,35 @@ const displayPhotos = () => {
 	imgBox.appendChild(ul)
 	let id
 	photosArr.forEach((photo) => {
+		// modal instance
+		const instance =
+			basicLightbox.create(`<a href="${photo.largeImageURL}" target="_blank">
+		<img src="${photo.largeImageURL}" width="800" height="600"></a>`)
+
+		// create els
 		id = Math.random()
 		const li = document.createElement("li")
 		const a = document.createElement("a")
 		const img = document.createElement("img")
 
+		// attributes settings
 		li.setAttribute("id", id)
 		setAtributes(a, {
-			href: photo.pageURL,
+			// href: photo.largeImageURL,
 			target: "_blank",
 		})
 		setAtributes(img, {
 			src: photo.webformatURL,
 			alt: photo.tags,
 			title: photo.tags,
+			["data-source"]: photo.largeImageURL,
 		})
 
+		a.addEventListener("click", () => {
+			instance.show()
+		})
+
+		// appending
 		ul.appendChild(li)
 		li.appendChild(a)
 		a.appendChild(img)

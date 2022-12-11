@@ -27,6 +27,10 @@ li {
 	list-style: none;
 }
 
+a {
+	cursor: pointer;
+}
+
 /* image container */
 .image-container {
 	margin: 10px 30%;
