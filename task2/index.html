@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="https://www.google.com/s2/u/0/favicons?domain=css-tricks.com" type="image/png">
-
+    <link rel="stylesheet" href="../backButton.css">
     <link rel="stylesheet" href="style.css">
     <title>createBoxes</title>
 </head>
 
 <body>
+
+
+    <a class="button-27" href="javascript:history.go(-1)">back</a>
+
     <div id="controls">
         <input type="number" min="0" max="100" step="1" class="js-input" />
         <button type="button" data-action="create">Utwórz</button>
@@ -19,6 +23,7 @@
     </div>
 
     <div id="boxes"></div>
+
     <script src="script.js"></script>
 </body>
 
